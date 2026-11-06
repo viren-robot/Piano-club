@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piano Club</title>
+  <meta name="description" content="Piano Club: upcoming events, recitals, announcements and practice sheets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Piano Club</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/events.html">Events</a>
+        <a href="/practice.html" data-need="student" hidden>Practice sheets</a>
+        <a href="/teacher.html" data-need="teacher" hidden>Teacher</a>
+        <a href="/login.html" data-auth="out">Sign in</a>
+        <button type="button" class="link" id="signout" data-auth="in" hidden>Sign out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="margin:-32px 0 32px; border-radius:0">
+      <div class="wrap">
+        <p class="eyebrow">School Piano Club</p>
+        <h1>Music, practice and performance together.</h1>
+        <p>Find our next recital, read the latest news from your teachers, and grab this week's practice sheet.</p>
+        <div class="hero-actions">
+          <a class="btn" href="/events.html">See events</a>
+          <a class="btn ghost" href="/practice.html">Practice sheets</a>
+        </div>
+      </div>
+      <div class="keys" aria-hidden="true"></div>
+    </section>
+
+    <div class="wrap">
+      <section aria-labelledby="next-h">
+        <h2 id="next-h">Next up</h2>
+        <div id="next-event"><p class="muted">Loading…</p></div>
+      </section>
+
+      <section aria-labelledby="ann-h">
+        <h2 id="ann-h">Announcements</h2>
+        <div id="announcements"><p class="muted">Loading…</p></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Piano Club · Updated by our teachers</div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

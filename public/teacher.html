@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher · Piano Club</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Piano Club</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/events.html">Events</a>
+        <a href="/practice.html" data-need="student" hidden>Practice sheets</a>
+        <a href="/teacher.html" data-need="teacher" hidden>Teacher</a>
+        <a href="/login.html" data-auth="out">Sign in</a>
+        <button type="button" class="link" id="signout" data-auth="in" hidden>Sign out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <p class="eyebrow">Teacher view</p>
+      <h1>Manage the club</h1>
+
+      <div id="gate" class="card" hidden>
+        <h2 style="font-size:1.3rem">Teacher sign-in required</h2>
+        <p class="muted">Enter the teacher PIN to post announcements, events and practice sheets.</p>
+        <a class="btn" href="/login.html?next=/teacher.html">Enter teacher PIN</a>
+      </div>
+
+      <div id="app" hidden>
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" data-tab="ann" aria-selected="true">Announcements</button>
+          <button type="button" role="tab" data-tab="ev" aria-selected="false">Events &amp; recitals</button>
+          <button type="button" role="tab" data-tab="sheet" aria-selected="false">Practice sheets</button>
+        </div>
+
+        <!-- Announcements -->
+        <section data-panel="ann" class="grid cols-2">
+          <div class="card">
+            <h2 style="font-size:1.3rem">New announcement</h2>
+            <div id="ann-notice" aria-live="polite"></div>
+            <form id="ann-form" class="stack">
+              <label>Title
+                <input name="title" required maxlength="120">
+              </label>
+              <label>Message
+                <textarea name="body" required maxlength="5000"></textarea>
+              </label>
+              <div class="row">
+                <button class="btn" type="submit">Post announcement</button>
+                <button class="btn secondary" type="button" data-cancel hidden>Cancel edit</button>
+              </div>
+            </form>
+          </div>
+          <div>
+            <h2 style="font-size:1.3rem">Posted</h2>
+            <div id="ann-list"></div>
+          </div>
+        </section>
+
+        <!-- Events -->
+        <section data-panel="ev" class="grid cols-2" hidden>
+          <div class="card">
+            <h2 style="font-size:1.3rem">New event or recital</h2>
+            <div id="ev-notice" aria-live="polite"></div>
+            <form id="ev-form" class="stack">
+              <label>Title
+                <input name="title" required maxlength="120" placeholder="Spring Recital">
+              </label>
+              <label>Type
+                <select name="type" required>
+                  <option value="recital">Recital</option>
+                  <option value="performance">Performance</option>
+                  <option value="meeting">Club meeting</option>
+                </select>
+              </label>
+              <label>Date and time
+                <input name="date" type="datetime-local" required>
+              </label>
+              <label>Location
+                <input name="location" maxlength="200" placeholder="Music room 2">
+              </label>
+              <label>Details
+                <textarea name="description" maxlength="2000"></textarea>
+              </label>
+              <div class="row">
+                <button class="btn" type="submit">Save event</button>
+                <button class="btn secondary" type="button" data-cancel hidden>Cancel edit</button>
+              </div>
+            </form>
+          </div>
+          <div>
+            <h2 style="font-size:1.3rem">Scheduled</h2>
+            <div id="ev-list"></div>
+          </div>
+        </section>
+
+        <!-- Practice sheets -->
+        <section data-panel="sheet" class="grid cols-2" hidden>
+          <div class="card">
+            <h2 style="font-size:1.3rem">Upload a practice sheet</h2>
+            <div id="sheet-notice" aria-live="polite"></div>
+            <form id="sheet-form" class="stack">
+              <label>Title
+                <input name="title" required maxlength="120" placeholder="Week 3: scales in C major">
+              </label>
+              <label>Notes for students
+                <textarea name="description" maxlength="1000"></textarea>
+              </label>
+              <label>File (PDF, PNG or JPEG, up to 10 MB)
+                <input name="file" type="file" accept="application/pdf,image/png,image/jpeg" required>
+              </label>
+              <div class="row">
+                <button class="btn" type="submit">Upload sheet</button>
+              </div>
+            </form>
+          </div>
+          <div>
+            <h2 style="font-size:1.3rem">Uploaded</h2>
+            <div id="sheet-list"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Piano Club · Updated by our teachers</div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events · Piano Club</title>
+  <meta name="description" content="Upcoming recitals, performances and meetings from the Piano Club.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Piano Club</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/events.html">Events</a>
+        <a href="/practice.html" data-need="student" hidden>Practice sheets</a>
+        <a href="/teacher.html" data-need="teacher" hidden>Teacher</a>
+        <a href="/login.html" data-auth="out">Sign in</a>
+        <button type="button" class="link" id="signout" data-auth="in" hidden>Sign out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <p class="eyebrow">Calendar</p>
+      <h1>Events &amp; performances</h1>
+      <p class="muted">Recitals, performances and club meetings.</p>
+
+      <section aria-labelledby="up-h">
+        <h2 id="up-h">Upcoming</h2>
+        <div id="upcoming"><p class="muted">Loading…</p></div>
+      </section>
+
+      <section aria-labelledby="past-h">
+        <h2 id="past-h">Past events</h2>
+        <div id="past"><p class="muted">Loading…</p></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Piano Club · Updated by our teachers</div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/events.js"></script>
+</body>
+</html>

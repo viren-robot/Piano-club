@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · Piano Club</title>
+  <meta name="description" content="Enter your PIN to sign in to the Piano Club site.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Piano Club</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/events.html">Events</a>
+        <a href="/practice.html" data-need="student" hidden>Practice sheets</a>
+        <a href="/teacher.html" data-need="teacher" hidden>Teacher</a>
+        <a href="/login.html" data-auth="out">Sign in</a>
+        <button type="button" class="link" id="signout" data-auth="in" hidden>Sign out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap" style="max-width:460px">
+      <p class="eyebrow">Members only</p>
+      <h1>Sign in</h1>
+      <p class="muted">Students and teachers each have a PIN. Enter yours below.</p>
+
+      <div class="card">
+        <div id="notice" aria-live="polite"></div>
+        <form id="login-form" class="stack" autocomplete="off">
+          <label for="pin">PIN
+            <input id="pin" class="pin-input" name="pin" type="password" inputmode="numeric" pattern="\d{4,8}" minlength="4" maxlength="8" required autofocus>
+          </label>
+          <button class="btn" type="submit">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Piano Club · Updated by our teachers</div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

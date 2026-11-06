@@ -1,0 +1,24 @@
+{
+  "name": "piano-club",
+  "version": "1.0.0",
+  "description": "Website for the school piano club: events, announcements, and practice sheets.",
+  "main": "server/index.js",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "hash-pin": "node scripts/hash-pin.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "mongodb": "^6.10.0",
+    "multer": "^2.0.0"
+  }
+}

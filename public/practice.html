@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practice sheets · Piano Club</title>
+  <meta name="description" content="Practice sheets for Piano Club students.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Piano Club</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/events.html">Events</a>
+        <a href="/practice.html" data-need="student" hidden>Practice sheets</a>
+        <a href="/teacher.html" data-need="teacher" hidden>Teacher</a>
+        <a href="/login.html" data-auth="out">Sign in</a>
+        <button type="button" class="link" id="signout" data-auth="in" hidden>Sign out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <p class="eyebrow">For students</p>
+      <h1>Practice sheets</h1>
+
+      <div id="gate" class="card" hidden>
+        <h2 style="font-size:1.3rem">Enter your student PIN</h2>
+        <p class="muted">Practice sheets are for club members. Ask your teacher for the student PIN.</p>
+        <a class="btn" href="/login.html?next=/practice.html">Enter PIN</a>
+      </div>
+
+      <div id="sheets"><p class="muted">Loading…</p></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Piano Club · Updated by our teachers</div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/practice.js"></script>
+</body>
+</html>
